@@ -8,10 +8,15 @@ new Vue({
     addItem:function(event){
       if(this.newItem=='') return;
       let todo ={
-        item: this.newItem
+        item: this.newItem,
+        isDone: false
       };
       this.todos.push(todo);
       this.newItem='';
+    },
+    deleteItem: function(index){
+     alert("本当に削除しますか？");
+     this.todos.splice(index,1)
     }
   }
 })
